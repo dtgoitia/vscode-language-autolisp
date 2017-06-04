@@ -1,0 +1,226 @@
+{
+  "list": {
+		"prefix": "list",
+		"body":   "(list\n\t$0\n);END list"
+  },
+  "if": {
+		"prefix": "if",
+		"body":   "(if ${1:condition}\n\t${2:single_function}\n);END if"
+  },
+  "cond": {
+		"prefix": "cond",
+		"body":   "(cond\n\t(${1:condition}\n\t\t${2:functions}\n\t);END subcond\n);END cond"
+  },
+  "subcond": {
+		"prefix": "scond",
+		"body":   "(${1:condition}\n\t${2:functions}\n);END subcond"
+  },
+  "setq block": {
+		"prefix": "setq",
+		"body":   [
+     "(setq",
+     "\t$0",
+     ");END setq"
+   ]
+  },
+  "progn": {
+		"prefix": "progn",
+		"body":   "(progn\n\t$0\n);END progn"
+  },
+  "princ": {
+		"prefix": "princ",
+		"body":   "(princ $0)"
+  },
+  "while": {
+		"prefix": "while",
+		"body":   "(while ${1:condition}\n\t${2:functions}\n);END while"
+  },
+  "polar": {
+		"prefix": "polar",
+		"body":   "(polar ${1:point} ${2:angle} ${3:distance})"
+  },
+  "append": {
+		"prefix": "append",
+		"body":   "(append\n\t$0\n);END append"
+  },
+  "mapcar": {
+		"prefix": "mapcar",
+		"body":   "(mapcar\n\t${1:function_to_apply}\n\t${2:list_where_to_apply_function}\n);END mapcar"
+  },
+  "foreach": {
+		"prefix": "foreach",
+		"body":   [
+     "(foreach a ${1:list}",
+     "\t${2:functions}",
+     ");END foreach"
+     ]
+  },
+  "and": {
+		"prefix": "and",
+		"body":   "(and\n\t$0\n);END and"
+  },
+  "or": {
+		"prefix": "or",
+		"body":   "(or\n\t$0\n);END or"
+  },
+  "cons": {
+		"prefix": "cons",
+		"body":   "(cons $0)"
+  },
+  "repeat": {
+		"prefix": "repeat",
+		"body":   "(repeat ${1:numberOfReps}\n\t${2:functions}\n);END repeat"
+  },
+  "ssget AND": {
+		"prefix": "ssAnd",
+		"body":   "(-4 . \"<AND\")$0(-4 . \"AND>\")"
+  },
+  "ssget OR": {
+		"prefix": "ssOr",
+		"body":   "(-4 . \"<OR\")$0(-4 . \"OR>\")"
+  },
+  "ssget NOT": {
+		"prefix": "ssNot",
+		"body":   "(-4 . \"<NOT\")$0(-4 . \"NOT>\")"
+  },
+   "ssget XOR": {
+		"prefix": "ssXor",
+		"body":   "(-4 . \"<XOR\")$0(-4 . \"XOR>\")"
+  },
+   "eval": {
+		"prefix": "eval",
+		"body":   "(eval ${1:expression})"
+  },
+  "vla-delete": {
+		"prefix": "vlaDel",
+		"body":   "(vla-delete ${1:object})"
+  },
+  "vlax-get-acad-object": {
+		"prefix": "vlaGetAcad",
+		"body":   "(vlax-get-acad-object)"
+  },
+  "vla-get-activeDocument": {
+		"prefix": "vlaGetActDoc",
+		"body":   "(vla-get-ActiveDocument ${1:acadObject})"
+  },
+  "vla-startUndoMark": {
+		"prefix": "vlaStartUndo",
+		"body":   "(vla-startUndoMark ${1:documentObject})"
+  },
+  "vla-endUndoMark": {
+		"prefix": "vlaEndUndo",
+		"body":   "(vla-endUndoMark ${1:documentObject})"
+  },
+  "vla-offset": {
+		"prefix": "vlaOffset",
+		"body":   "(vla-offset ${1:object} ${2:offsetDistance})"
+  },
+  "ename -> vla": {
+		"prefix": "ename2vla",
+		"body":   "(vlax-ename->vla-object ${1:ent_name})"
+  },
+  "vla -> ename": {
+		"prefix": "vla2ename",
+		"body":   "(vlax-vla-object->ename ${1:VL_ent_name})"
+  },
+  "vlax-get-property": {
+		"prefix": "getprop",
+		"body":   "(vlax-get-property ${1:object} ${2:propertyName})"
+  },
+  "vlax-put-property": {
+		"prefix": "putprop",
+		"body":   "(vlax-put-property ${1:object} ${2:propertyName} \${3:propertyValue})"
+  },
+  "vlax-dump-object": {
+		"prefix": "dump",
+		"body":   "(vlax-dump-object ${1:object})"
+  },
+  "vlax-property-available-p": {
+		"prefix": "propAvailable",
+		"body":   "(vlax-property-available-p ${1:object} ${2:property})"
+  },
+  "vlax-curve-getArea": {
+		"prefix": "getArea",
+		"body":   "(vlax-curve-getArea ${1:object})"
+  },
+  "vlax-curve-getClosestPointTo": {
+		"prefix": "getClosestPointTo",
+		"body":   "(vlax-curve-getClosestPointTo ${1:object} ${2:point})"
+  },
+  "vlax-curve-getDistAtParam": {
+		"prefix": "getDistAtParam",
+		"body":   "(vlax-curve-getDistAtParam ${1:object} ${2:param})"
+  },
+  "vlax-curve-getDistAtPoint": {
+		"prefix": "getDistAtPoint",
+		"body":   "(vlax-curve-getDistAtPoint ${1:object} ${2:point})"
+  },
+  "vlax-curve-getEndParam": {
+		"prefix": "getEndParam",
+		"body":   "(vlax-curve-getEndParam ${1:object})"
+  },
+  "vlax-curve-getEndPoint": {
+		"prefix": "getEndPoint",
+		"body":   "(vlax-curve-getEndPoint ${1:object})"
+  },
+  "vlax-curve-getParamAtDist": {
+		"prefix": "getParamAtDist",
+		"body":   "(vlax-curve-getParamAtDist ${1:object} ${2:point})"
+  },
+  "vlax-curve-getParamAtPoint": {
+		"prefix": "getParamAtPoint",
+		"body":   "(vlax-curve-getParamAtPoint ${1:object} ${2:distance})"
+  },
+  "vlax-curve-getPointAtDist": {
+		"prefix": "getPointAtDist",
+		"body":   "(vlax-curve-getPointAtDist ${1:object} ${2:distance})"
+  },
+  "vlax-curve-getPointAtParam": {
+		"prefix": "getPointAtParam",
+		"body":   "(vlax-curve-getPointAtParam ${1:object} ${2:param})"
+  },
+  "vlax-curve-getStartPoint": {
+		"prefix": "getStartPoint",
+		"body":   "(vlax-curve-getStartPoint ${1:object})"
+  },
+  "vlax-safearray->list": {
+		"prefix": "vlaxSafearrayList",
+		"body":   "(vlax-safearray->list ${1:variant})"
+  },
+  "vlax-safearray-type": {
+		"prefix": "vlaxSafearrayType",
+		"body":   "(vlax-safearray-type var)"
+  },
+  "vlax-variant-type": {
+		"prefix": "vlaxVariantType",
+		"body":   "(vlax-variant-type ${1:variant})"
+  },
+  "vlax-variant-value": {
+		"prefix": "vlaxVariantValue",
+		"body":   "(vlax-variant-value ${1:variant})"
+  },
+  "vl-filename-base": {
+		"prefix": "vlaFileNameBase",
+		"body":   "(vl-filename-base ${1:fileName})"
+  },
+  "vl-filename-directory": {
+		"prefix": "vlaFileDirectory",
+		"body":   "(vl-filename-directory ${1:fileName})"
+  },
+  "vl-filename-extension": {
+		"prefix": "vlaFileExtension",
+		"body":   "(vl-filename-extension ${1:fileName})"
+  },
+  "vl-mkdir": {
+		"prefix": "mkdir",
+		"body":   "(vl-mkdir ${1:fullPath})"
+  },
+  "vl-symbol-name": {
+		"prefix": "vlSymbolName",
+		"body":   "(vl-symbol-name ${1:symbol})"
+  },
+  "vl-princ-to-string":  {
+		"prefix": "vlPrincToString",
+		"body":   "(vl-princ-to-string ${1:object})"
+  },
+}
